@@ -5,7 +5,6 @@ import redis.clients.jedis.Jedis;
 import util.RedisUtil;
 
 import java.util.Collections;
-import java.util.UUID;
 
 /**
  * @program: redislock
@@ -24,7 +23,7 @@ public class RedisLock {
         log.info("获取redis连接, {}", jedis);
     }
 
-    /*
+    /**
      * @description: 加锁
      * @author: dengbin
      * @date: 2018/11/14 下午2:43
@@ -35,7 +34,7 @@ public class RedisLock {
         return RedisUtil.LOCK_SUCCESS.equals(res);
     }
 
-    /*
+    /**
      * @description: 尝试加锁
      * @author: dengbin
      * @date: 2018/11/14 下午3:00
@@ -57,7 +56,7 @@ public class RedisLock {
         return true;
     }
 
-    /*
+    /**
      * @description: 尝试加锁,可以指定尝试的次数
      * @author: dengbin
      * @date: 2018/11/14 下午3:00
@@ -84,7 +83,7 @@ public class RedisLock {
         return true;
     }
 
-    /*
+    /**
      * @description: 解锁
      * @author: dengbin
      * @date: 2018/11/14 下午3:21

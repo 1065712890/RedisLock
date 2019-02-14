@@ -41,7 +41,7 @@ public class RedisTest {
     @Test
     public void lock(){
         String res = jedis.set(LOCK_KEY, "db_id", "NX", "PX", 100000);
-        log.info("{}", res == null ? "加锁失败" : "加锁成功");
+        log.info("{} {}", res, res == null ? "加锁失败" : "加锁成功");
     }
 
     @Test

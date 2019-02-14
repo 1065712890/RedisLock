@@ -13,49 +13,107 @@ import redis.clients.jedis.JedisPoolConfig;
 
 public class RedisUtil {
 
-    //锁的key前缀， 加上商品id
+    /**
+    * @description: 锁的key前缀， 加上商品id
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     private static final String LOCK_KEY = "DB_REDIS_LOCK_";
 
-    //锁的值前缀，加上请求id
+    /**
+    * @description: 锁的值前缀，加上请求id
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     private static final String REQUEST_KEY = "DB_REDIS_REQUEST_";
 
-    //KEY存活时间
+    /**
+    * @description: KEY存活时间
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     public static final Integer SURVIVAL_TIME = 30000;
 
-    //成功删除返回值
+    /**
+    * @description: 成功删除返回值
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     public static final Long RELEASE_SUCCESS = 1L;
 
-    //成功加锁返回值
+    /**
+    * @description: 成功加锁返回值
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     public static final String LOCK_SUCCESS = "OK";
 
-    //如果不存在则加锁
+    /**
+    * @description: 如果不存在则加锁
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     public static final String SET_IF_NOT_EXIST = "NX";
 
-    //设置存活时间
+    /**
+    * @description: 设置存活时间
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     public static final String SET_WITH_EXPIRE_TIME = "PX";
 
-    //Redis服务器IP
+    /**
+    * @description: Redis服务器IP
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     private static String ADDR = "127.0.0.1";
 
-    //Redis的端口号
+    /**
+    * @description: Redis的端口号
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     private static int PORT = 6379;
 
-    //访问密码
+    /**
+    * @description: 访问密码
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     private static String AUTH = "";
 
-    //可用连接实例的最大数目，默认值为8；
-    //如果赋值为-1，则表示不限制；如果pool已经分配了maxTotal个jedis实例，则此时pool的状态为exhausted(耗尽)。
+    /**
+    * @description:
+    * @author: dengbin
+    * @date: 2019/2/14
+    * 可用连接实例的最大数目，默认值为8；
+    * 如果赋值为-1，则表示不限制；如果pool已经分配了maxTotal个jedis实例，则此时pool的状态为exhausted(耗尽)。
+    */
     private static int MAX_TOTAL = 1024;
 
-    //控制一个pool最多有多少个状态为idle(空闲的)的jedis实例，默认值也是8。
+    /**
+    * @description: 控制一个pool最多有多少个状态为idle(空闲的)的jedis实例，默认值也是8。
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     private static int MAX_IDLE = 200;
 
-    //等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException；
+    /**
+    * @description:
+    * @author: dengbin
+    * @date: 2019/2/14
+    * 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException；
+    */
     private static int MAX_WAIT_MILLIS = 10000;
 
     private static int TIMEOUT = 10000;
 
-    //在borrow一个jedis实例时，是否提前进行validate操作；如果为true，则得到的jedis实例均是可用的；
+    /**
+    * @description: 在borrow一个jedis实例时，是否提前进行validate操作；如果为true，则得到的jedis实例均是可用的；
+    * @author: dengbin
+    * @date: 2019/2/14
+    */
     private static boolean TEST_ON_BORROW = true;
 
     private static JedisPool jedisPool = null;
@@ -104,7 +162,7 @@ public class RedisUtil {
         }
     }
 
-    /*
+    /**
     * @description: 生成key
     * @author: dengbin
     * @date: 2018/11/14 下午2:47
@@ -113,7 +171,7 @@ public class RedisUtil {
         return LOCK_KEY + productId;
     }
 
-    /*
+    /**
     * @description: 生成value
     * @author: dengbin
     * @date: 2018/11/14 下午2:48
