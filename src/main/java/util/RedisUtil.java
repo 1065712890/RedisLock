@@ -67,7 +67,7 @@ public class RedisUtil {
     * @author: dengbin
     * @date: 2019/2/14
     */
-    private static String ADDR = "127.0.0.1";
+    private static String ADDR = "119.29.161.142";
 
     /**
     * @description: Redis的端口号

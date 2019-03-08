@@ -5,6 +5,7 @@ import redis.clients.jedis.Jedis;
 import util.RedisUtil;
 
 import java.util.Collections;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @program: redislock
@@ -22,6 +23,19 @@ public class RedisLock {
         jedis = RedisUtil.getJedis();
         log.info("获取redis连接, {}", jedis);
     }
+
+
+    /**
+     * @description: 加锁,支持设置加锁时间
+     * @author: dengbin
+     * @date: 2018/11/14 下午2:43
+     */
+    public static Boolean lock(String key, String value, TimeUnit timeUnit, Long time) {
+        String res = jedis.set(key, value, "NX", "PX", timeUnit.toSeconds(time));
+        log.info("{} - {} 加锁结果: {}", key, value, RedisUtil.LOCK_SUCCESS.equals(res) ? "成功" : "失败");
+        return RedisUtil.LOCK_SUCCESS.equals(res);
+    }
+
 
     /**
      * @description: 加锁
@@ -104,7 +118,7 @@ public class RedisLock {
 
     public static void main(String[] args) throws InterruptedException {
         String productId = "2018", requestId = "dengbing";
-        //RedisLock.tryLock(productId, requestId);
+        RedisLock.tryLock(productId, requestId);
         RedisLock.unLock(productId, requestId);
     }
 }
