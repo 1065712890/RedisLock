@@ -31,7 +31,7 @@ public class RedisLock {
      * @date: 2018/11/14 下午2:43
      */
     public static Boolean lock(String key, String value, TimeUnit timeUnit, Long time) {
-        String res = jedis.set(key, value, "NX", "PX", timeUnit.toSeconds(time));
+        String res = jedis.set(key, value, "NX", "EX", timeUnit.toSeconds(time));
         log.info("{} - {} 加锁结果: {}", key, value, RedisUtil.LOCK_SUCCESS.equals(res) ? "成功" : "失败");
         return RedisUtil.LOCK_SUCCESS.equals(res);
     }
@@ -43,9 +43,15 @@ public class RedisLock {
      * @date: 2018/11/14 下午2:43
      */
     public static Boolean lock(String key, String value) {
-        String res = jedis.set(key, value, "NX", "PX", RedisUtil.SURVIVAL_TIME);
-        log.info("{} - {} 加锁结果: {}", key, value, RedisUtil.LOCK_SUCCESS.equals(res) ? "成功" : "失败");
-        return RedisUtil.LOCK_SUCCESS.equals(res);
+        String script = "if redis.call('get', KEYS[1]) == ARGV[1] then return 'OK' else return " +
+                "redis.call('set', KEYS[1], ARGV[1], 'NX', 'EX', 10) end";
+        Object result = jedis.eval(script, Collections.singletonList(key), Collections.singletonList(value));
+        log.info("加锁结果:{}", result);
+        if (RedisUtil.LOCK_SUCCESS.equals(result)) {
+            log.info("{} - {} 加锁成功", key, value);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -55,7 +61,7 @@ public class RedisLock {
      */
     public static Boolean tryLock(String productId, String requestId) throws InterruptedException {
         String key = RedisUtil.generateLockKey(productId);
-        while (lock(key, requestId) != true) {
+        while (!lock(key, requestId)) {
             //获取key剩余时间
             Long time = jedis.ttl(key);
             log.info("产生冲突，剩余时间:{}", time);
@@ -78,7 +84,7 @@ public class RedisLock {
     public static Boolean tryLock(String productId, String requestId, Integer times) throws InterruptedException {
         String key = RedisUtil.generateLockKey(productId);
         int cnt = 0;
-        while (lock(key, requestId) != true) {
+        while (!lock(key, requestId)) {
             ++cnt;
             if(cnt > times){
                 return false;
@@ -117,8 +123,8 @@ public class RedisLock {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        String productId = "2018", requestId = "dengbing";
+        String productId = "2019", requestId = "dengbing212";
         RedisLock.tryLock(productId, requestId);
-        RedisLock.unLock(productId, requestId);
+        //RedisLock.unLock(productId, requestId);
     }
 }
