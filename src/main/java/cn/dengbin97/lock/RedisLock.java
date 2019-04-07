@@ -1,8 +1,8 @@
-package lock;
+package cn.dengbin97.lock;
 
 import lombok.extern.slf4j.Slf4j;
 import redis.clients.jedis.Jedis;
-import util.RedisUtil;
+import cn.dengbin97.util.RedisUtil;
 
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
@@ -30,8 +30,8 @@ public class RedisLock {
      * @author: dengbin
      * @date: 2018/11/14 下午2:43
      */
-    public static Boolean lock(String key, String value, TimeUnit timeUnit, Long time) {
-        String res = jedis.set(key, value, "NX", "EX", timeUnit.toSeconds(time));
+    public static Boolean lock(String key, String value, Long time) {
+        String res = jedis.set(key, value, "NX", "EX", time);
         log.info("{} - {} 加锁结果: {}", key, value, RedisUtil.LOCK_SUCCESS.equals(res) ? "成功" : "失败");
         return RedisUtil.LOCK_SUCCESS.equals(res);
     }
@@ -55,25 +55,20 @@ public class RedisLock {
     }
 
     /**
-     * @description: 尝试加锁
+     * @description: 尝试加锁 多个重载方法 可指定尝试加锁次数，key的时间
      * @author: dengbin
      * @date: 2018/11/14 下午3:00
      */
     public static Boolean tryLock(String productId, String requestId) throws InterruptedException {
-        String key = RedisUtil.generateLockKey(productId);
-        while (!lock(key, requestId)) {
-            //获取key剩余时间
-            Long time = jedis.ttl(key);
-            log.info("产生冲突，剩余时间:{}", time);
-            if (time > 0) {
-                //休眠
-                Thread.sleep(time * 1000);
-            }else if(time == 0){
-                //此处延时1s，否则会多次尝试加锁并失败
-                Thread.sleep(1000);
-            }
-        }
-        return true;
+        return tryLock(productId, requestId, Integer.MAX_VALUE, TimeUnit.SECONDS, RedisUtil.SURVIVAL_TIME);
+    }
+
+    public static Boolean tryLock(String productId, String requestId, Integer tryTimes) throws InterruptedException {
+        return tryLock(productId, requestId, tryTimes, TimeUnit.SECONDS, RedisUtil.SURVIVAL_TIME);
+    }
+
+    public static Boolean tryLock(String productId, String requestId, TimeUnit timeUnit, Long time) throws InterruptedException {
+        return tryLock(productId, requestId, Integer.MAX_VALUE, timeUnit, time);
     }
 
     /**
@@ -81,21 +76,22 @@ public class RedisLock {
      * @author: dengbin
      * @date: 2018/11/14 下午3:00
      */
-    public static Boolean tryLock(String productId, String requestId, Integer times) throws InterruptedException {
+    public static Boolean tryLock(String productId, String requestId, Integer tryTimes, TimeUnit timeUnit, Long time) throws InterruptedException {
         String key = RedisUtil.generateLockKey(productId);
         int cnt = 0;
-        while (!lock(key, requestId)) {
+        Long survivalTime = timeUnit.toSeconds(time);
+        while (!lock(key, requestId, survivalTime)) {
             ++cnt;
-            if(cnt > times){
+            if(cnt >= tryTimes){
                 return false;
             }
             //获取key剩余时间
-            Long time = jedis.ttl(key);
+            Long leftTime = jedis.ttl(key);
             log.info("产生冲突，剩余时间:{}", time);
-            if (time > 0) {
+            if (leftTime > 0) {
                 //休眠
                 Thread.sleep(time * 1000);
-            }else if(time == 0){
+            }else if(leftTime == 0){
                 //此处延时1s，否则会多次尝试加锁并失败
                 Thread.sleep(1000);
             }
@@ -124,7 +120,7 @@ public class RedisLock {
 
     public static void main(String[] args) throws InterruptedException {
         String productId = "2019", requestId = "dengbing212";
-        RedisLock.tryLock(productId, requestId);
-        //RedisLock.unLock(productId, requestId);
+        RedisLock.tryLock(productId, requestId, TimeUnit.SECONDS, 100L);
+        RedisLock.unLock(productId, requestId);
     }
 }

@@ -1,2 +1,2 @@
-lock/RedisLock.class
-util/RedisUtil.class
+cn/dengbin97/util/RedisUtil.class
+cn/dengbin97/lock/RedisLock.class

@@ -1,4 +1,4 @@
-package util;
+package cn.dengbin97.util;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -32,7 +32,7 @@ public class RedisUtil {
     * @author: dengbin
     * @date: 2019/2/14
     */
-    public static final Integer SURVIVAL_TIME = 30000;
+    public static final Long SURVIVAL_TIME = 10L;
 
     /**
     * @description: 成功删除返回值
