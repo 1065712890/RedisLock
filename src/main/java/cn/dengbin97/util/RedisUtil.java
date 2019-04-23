@@ -21,6 +21,13 @@ public class RedisUtil {
     private static final String LOCK_KEY = "DB_REDIS_LOCK_";
 
     /**
+     * @description: 锁重入，计数
+     * @author: dengbin
+     * @date: 2019/2/14
+     */
+    public static final String LOCK_TIMES = "DB_REDIS_LOCKTIMES";
+
+    /**
     * @description: 锁的值前缀，加上请求id
     * @author: dengbin
     * @date: 2019/2/14
@@ -90,7 +97,7 @@ public class RedisUtil {
     * 可用连接实例的最大数目，默认值为8；
     * 如果赋值为-1，则表示不限制；如果pool已经分配了maxTotal个jedis实例，则此时pool的状态为exhausted(耗尽)。
     */
-    private static int MAX_TOTAL = 1024;
+    private static int MAX_TOTAL = -1;
 
     /**
     * @description: 控制一个pool最多有多少个状态为idle(空闲的)的jedis实例，默认值也是8。
@@ -107,7 +114,7 @@ public class RedisUtil {
     */
     private static int MAX_WAIT_MILLIS = 10000;
 
-    private static int TIMEOUT = 10000;
+    private static int TIMEOUT = 0;
 
     /**
     * @description: 在borrow一个jedis实例时，是否提前进行validate操作；如果为true，则得到的jedis实例均是可用的；
