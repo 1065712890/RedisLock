@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0ee69f0c-eee1-409d-bc30-3c484e7cf501" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dengbin97/lock/RedisLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dengbin97/lock/RedisLock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/dengbin97/util/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dengbin97/util/RedisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/RedisTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/RedisTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/redis-lock-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/redis-lock-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/RedisTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/RedisTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,9 +27,9 @@
     <session id="-1130620979">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="25" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -37,10 +38,10 @@
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.3" value="4" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="3" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -51,7 +52,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4057" />
+          <entry key="JAVA" value="4118" />
           <entry key="Properties" value="36" />
           <entry key="XML" value="17" />
         </counts>
@@ -67,12 +68,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="7" />
-          <entry key="JAVA" value="14" />
+          <entry key="CLASS" value="8" />
+          <entry key="JAVA" value="16" />
           <entry key="Log" value="3" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Properties" value="4" />
-          <entry key="XML" value="3" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
     </session>
@@ -80,19 +81,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/test/java/test/RedisTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+            <state relative-caret-position="180">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/dengbin97/lock/RedisLock.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/dengbin97/util/RedisUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
+            <state relative-caret-position="146">
+              <caret line="129" column="24" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,13 +102,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/dengbin97/util/RedisUtil.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/JedisSentinelPool.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1746">
-              <caret line="99" column="37" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="324">
+              <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="846">
+              <caret line="47" column="21" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="47" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -132,9 +139,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/util/RedisUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/lock/RedisLock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/dengbin97/lock/RedisLock.java" />
         <option value="$PROJECT_DIR$/src/test/java/test/RedisTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/dengbin97/util/RedisUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/dengbin97/lock/RedisLock.java" />
       </list>
     </option>
   </component>
@@ -162,7 +169,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,6 +207,15 @@
               <item name="redislock" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dengbin97" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redislock" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redislock" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -233,6 +248,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -264,7 +280,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.RedisLock">
+  <component name="RunManager" selected="JUnit.RedisTest.scheduled3">
     <configuration name="RedisLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.dengbin97.lock.RedisLock" />
       <module name="redislock" />
@@ -359,9 +375,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RedisLock" />
         <item itemvalue="JUnit.RedisTest.scheduled3" />
         <item itemvalue="JUnit.RedisTest.scheduled2" />
+        <item itemvalue="Application.RedisLock" />
         <item itemvalue="JUnit.RedisTest.single" />
       </list>
     </recent_temporary>
@@ -399,22 +415,13 @@
       <workItem from="1555123382033" duration="2447000" />
       <workItem from="1555129191297" duration="353000" />
       <workItem from="1555421110601" duration="13000" />
+      <workItem from="1555987110772" duration="485000" />
+      <workItem from="1555988033361" duration="2125000" />
+      <workItem from="1556078989828" duration="32000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RedisTest_scheduled - 2019.04.07 at 13h 31m 14s.xml">
-      <configuration name="RedisTest.scheduled" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedisTest_scheduled2 - 2019.04.07 at 13h 31m 24s.xml">
-      <configuration name="RedisTest.scheduled2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedisTest_scheduled3 - 2019.04.07 at 13h 31m 34s.xml">
-      <configuration name="RedisTest.scheduled3" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RedisTest_scheduled - 2019.04.07 at 13h 33m 13s.xml">
-      <configuration name="RedisTest.scheduled" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RedisTest_scheduled - 2019.04.07 at 13h 33m 37s.xml">
       <configuration name="RedisTest.scheduled" configurationId="JUnit" />
     </history-entry>
@@ -433,9 +440,21 @@
     <history-entry file="RedisTest_scheduled3 - 2019.04.07 at 13h 34m 47s.xml">
       <configuration name="RedisTest.scheduled3" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RedisTest_scheduled - 2019.04.23 at 10h 40m 08s.xml">
+      <configuration name="RedisTest.scheduled" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisTest_scheduled - 2019.04.23 at 10h 41m 42s.xml">
+      <configuration name="RedisTest.scheduled" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisTest_scheduled2 - 2019.04.23 at 10h 41m 43s.xml">
+      <configuration name="RedisTest.scheduled2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisTest_scheduled3 - 2019.04.23 at 10h 41m 45s.xml">
+      <configuration name="RedisTest.scheduled3" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41942000" />
+    <option name="totallyTimeSpent" value="44584000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -448,26 +467,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="699" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="JRebel" order="2" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="3" weight="0.2924071" />
+      <window_info content_ui="combo" id="Project" order="3" weight="0.29644588" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="bottom" id="JRebel Executor" order="0" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3270548" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.3270548" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.5374823" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.39886847" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.5359589" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39726028" />
       <window_info anchor="bottom" id="JRebel Console" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" weight="0.32956153" />
+      <window_info anchor="bottom" id="TODO" order="12" weight="0.32876712" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32908705" />
       <window_info anchor="bottom" id="Spring" order="14" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
@@ -484,18 +504,18 @@
       <window_info id="Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="JRebel" order="2" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.2924071" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.29644588" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="bottom" id="JRebel Executor" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.3281471" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.3270548" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.5374823" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.39886847" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.5359589" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39726028" />
       <window_info anchor="bottom" id="JRebel Console" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -507,10 +527,10 @@
       <window_info anchor="right" id="Maven Projects" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
-      <window_info anchor="right" id="Bean Validation" order="6" />
-      <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.32956383" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info anchor="right" id="Bean Validation" order="5" />
+      <window_info anchor="right" id="Coverage" order="6" side_tool="true" weight="0.32956383" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.24959612" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,30 +538,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/test/RedisTest.java</url>
-          <line>33</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/test/RedisTest.java</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/test/RedisTest.java</url>
-          <line>55</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -586,13 +582,6 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/test/RedisTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/Jedis.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -607,27 +596,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/dengbin97/lock/RedisLock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/dengbin97/util/RedisUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1746">
-          <caret line="99" column="37" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
+        <state relative-caret-position="296">
+          <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/dengbin97/lock/RedisLock.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/test/RedisTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
+        <state relative-caret-position="180">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/JedisSentinelPool.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="846">
+          <caret line="47" column="21" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="47" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/dengbin97/util/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="129" column="24" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

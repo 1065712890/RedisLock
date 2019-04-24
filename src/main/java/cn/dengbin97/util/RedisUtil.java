@@ -3,6 +3,10 @@ package cn.dengbin97.util;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.JedisSentinelPool;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @program: redislock
@@ -135,7 +139,14 @@ public class RedisUtil {
             config.setMaxIdle(MAX_IDLE);
             config.setMaxWaitMillis(MAX_WAIT_MILLIS);
             config.setTestOnBorrow(TEST_ON_BORROW);
-            jedisPool = new JedisPool(config, ADDR, PORT, TIMEOUT);
+//            String master = "mymaster";
+//            //sentinel客户端提供了master自动发现功能
+//            Set<String> sentinels = new HashSet<>();
+//            sentinels.add("127.0.0.1:26379");
+//            sentinels.add("127.0.0.1:26380");
+
+//            jedisPool = new JedisSentinelPool(master, sentinels, config);
+              jedisPool = new JedisPool(config, ADDR, PORT, TIMEOUT);
         } catch (Exception e) {
             e.printStackTrace();
         }

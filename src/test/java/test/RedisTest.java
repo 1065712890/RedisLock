@@ -34,6 +34,7 @@ public class RedisTest {
         if ( RedisLock.tryLock("key", "string1", 0)) {
             jedis.incrBy("key", 1);
             log.info("机器1-获取到锁，执行定时任务");
+            RedisLock.unLock("key", "string1");
         } else {
             log.info("机器1-获取锁失败");
         }
@@ -45,6 +46,7 @@ public class RedisTest {
         if ( RedisLock.tryLock("key", "string2", 0)) {
             jedis.incrBy("key", 1);
             log.info("机器2-获取到锁，执行定时任务");
+            RedisLock.unLock("key", "string2");
         } else {
             log.info("机器2-获取锁失败");
         }
@@ -56,6 +58,7 @@ public class RedisTest {
         if ( RedisLock.tryLock("key", "string3", 0)) {
             jedis.incrBy("key", 1);
             log.info("机器3-获取到锁，执行定时任务");
+            RedisLock.unLock("key", "string3");
         } else {
             log.info("机器3-获取锁失败");
         }
